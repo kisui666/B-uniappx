@@ -1,0 +1,40 @@
+<template>
+	<view class="page">
+		<view class="card">
+			<view class="avatar">
+				<image class="avatar-img" src="../../static/card.jpg"/>
+				<view class="linkAbout" @click="goAbout"><text class="avatar-text">编辑资料</text></view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script setup>
+	const goAbout = () => {
+		uni.navigateTo({ url: '/pages/reviesme/reviesme'})
+	}	
+</script>
+
+<style>
+	.avatar{
+		flex: 1;
+		margin: 10px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.avatar-img {
+		width: 88px;
+		height: 88px;
+		margin: 0px;
+		padding: 0px;
+		border-radius: 44px;
+	}
+	
+	.avatar-text{
+	  margin: 30px;
+	  font-size: 16px;
+	  color: #333333;
+	}	
+</style>

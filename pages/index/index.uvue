@@ -1,0 +1,61 @@
+<template>
+	<view class="page">
+		<view class="card">
+			<view class="avatar">
+				<image class="avatar-img" src="../../static/card.jpg"/>
+				<view class="linkAbout" @click="goAbout"><text class="avatar-text">关于我</text></view>
+				
+			</view>
+		</view>
+		
+		<view class="tags">
+			<view class="tag"><text>离线缓存</text></view>
+			
+			<view class="tag"><text>历史记录</text></view>
+			
+			<view class="tag"><text>我的收藏</text></view>
+			
+			<view class="tag"><text>稍后再看</text></view>
+		</view>
+	</view>
+</template>
+
+<script setup lang="ts">
+	const goAbout = () => {
+		uni.navigateTo({ url: '/pages/aboutme/aboutme'})
+	}
+
+</script>
+
+<style>
+.avatar{
+	flex: 1;
+	margin: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.avatar-img {
+	width: 88px;
+	height: 88px;
+	margin: 0px;
+	padding: 0px;
+	border-radius: 44px;
+}
+
+.avatar-text{
+  margin: 30px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.tags{
+	flex: 1;
+	flex-direction: row;
+}
+
+.tag{
+	margin: 10px;
+}
+</style>

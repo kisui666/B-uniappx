@@ -1,0 +1,116 @@
+<template>
+	<view class="page">
+		
+		<view class="group">
+			<view class="cell" v-for="item in group1" :key="item.label" @click="onClick(item)" >
+				<text class="label">{{ item.label}}</text>
+				<view class="right">
+					<text class="value">{{item.value}}</text>
+					<text class="arrow">›</text>
+				</view>
+			</view>
+		</view>
+		
+		<view class="gap"></view>
+		
+		<view class="group">
+			<view class="cell" @click="onClick(item)">
+				<text class="label">头像挂件</text>
+				<view class="right">
+					<text class="arrow">›</text>
+				</view>
+			</view>
+		</view>
+		
+		<view class="gap"></view>
+		
+		<view class="group">
+			<view class="cell" v-for="item in group3" :key="item.label"  @click="onClick(item)">{{item.label}}</view>
+			<view class="right">
+				<text class="arrow">{{item.value}}</text>
+				<text class="arrow">›</text>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script setup>
+	const group1 = [
+		{ label: "头像", value: ""},
+		{ label: "昵称", value: ""},
+		{ label: "性别", value: ""},
+		{ label: "出生年月", value: "生日当天会收到祝福"},
+		{ label: "个性签名", value: "这个人很神秘，什么都没有写"},
+		{ label: "学校", value: ""},
+	]
+		
+	const group3 = [
+		{ label: 'UID', value: '1844865347' },
+		{ label: '二维码名片', value: '', qrcode: true },
+		{ label: '购买邀请码', value: '' },
+		{ label: '哔哩哔哩认证', value: ''}	
+	]
+		
+	const onClick = (item) => {
+		console.log('点击了', item.label)
+	}
+</script>
+
+<style>
+	page{
+		background-color: #f4f5f7;
+	}
+	
+	.page{
+		min-height: 100vh;
+		background-color: #f4f5f7;
+	}
+	
+	.group{
+		background-color: white;
+	}
+	
+	.cell{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 14px 16px;
+		border-bottom: 1px solid #f0f0f0;
+	}
+	
+	.cell:last-child {
+		border-bottom: none;
+	}
+		
+	.label{
+		font-size: 15px;
+		color: #18191c;
+	}
+	
+	.right {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+	}
+	
+	.value {
+			font-size: 14px;
+			color: #9499a0;
+			margin-right: 6px;
+			max-width: 200px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+	}
+	
+	.arrow {
+			font-size: 18px;
+			color: #c0c4cc;
+	}
+	
+	.gap {
+			height: 10px;
+			background: #f4f5f7;
+		}
+</style>
